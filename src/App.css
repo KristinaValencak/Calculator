@@ -3,8 +3,12 @@
 
 }
 body {
-    margin: 0;
-    background: linear-gradient(to right, #00AAFF, #00FF6C);
+  margin: 0;
+  background: linear-gradient(to right, #00AAFF, #00FF6C);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 .calculator-grid {
     display: grid;
@@ -12,6 +16,8 @@ body {
     margin-top: 2rem;
     grid-template-columns: repeat(4,6rem);
     grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+   
+
 }
 
 .calculator-grid > button {
@@ -48,4 +54,26 @@ body {
 .output .current-operand {
     color: white;
     font-size: 2.5rem;
+}
+@media (max-width: 600px) {
+  .calculator-grid {
+    grid-template-columns: repeat(4, 4rem);
+    grid-template-rows: minmax(5rem, auto) repeat(5, 4rem);
+  }
+
+  .calculator-grid > button {
+    font-size: 1.25rem;
+  }
+
+  .output .previous-operand {
+    font-size: 1rem;
+  }
+
+  .output .current-operand {
+    font-size: 1.5rem;
+  }
+
+  .output {
+    padding: 0.5rem;
+  }
 }
